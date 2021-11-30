@@ -1,0 +1,488 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+/* -------------------------------- entete + nav ------------------------------------*/
+html{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+body{
+    width: 100%;
+    height: 100%;
+}
+ header{
+    opacity: 0.6;
+    background-color: #B98F8F;
+    
+   display: grid;
+   grid-template-columns: 1fr 1fr 1Fr;
+   height: 10%;
+   align-items: center;
+
+}
+
+button{ /*boutton du header*/
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+     
+}
+main{
+    width: 100%;
+    height: 80%;
+}
+footer{
+    
+    display: block;
+    background-color: #B98F8F;
+    height: 10%;
+    
+    opacity: 0.8;
+    
+    
+
+}
+
+
+
+header h1{
+    
+    font-family: cursive;
+    color: black;
+
+
+    align-items: center;
+    text-align: center;
+ 
+}
+
+
+
+
+#connexion{
+    margin-left: 20%;
+    width: 60%;
+    height: 35px;
+    background-color: darkgray;
+    opacity: none;
+
+ 
+    }
+
+
+.listenav li {
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    
+   
+
+}
+
+.listenav{
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; */
+            display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+  
+    overflow-x: auto;
+    background: rgb(23,0,153);
+background: linear-gradient(90deg, rgba(23,0,153,1) 0%, rgba(178,0,0,0.7885714285714286) 85%);
+
+
+
+}
+
+.listenav li{
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-shrink: 0;
+    
+
+
+}
+
+.nav{
+
+
+    justify-content: space-evenly;
+    background-color:#B98F8F ;
+    height: 10%;
+    opacity: 0.8;
+
+}
+
+a{
+    font-size:x-large;
+    font-family: cursive;
+    text-decoration:none; 
+    font-style: oblique;
+    color: white;
+    text-align: center;
+    
+}
+
+a:hover{
+    color: red;
+}
+
+
+.active {
+    background-color: grey;
+    opacity: 1;
+    
+}
+
+
+
+
+/*------------------------------- Contenu principal------------------------------------*/
+
+body{
+    background-size:cover;
+    background-image: url(../images/biblio.jpg);
+    background-attachment: fixed;
+
+}
+
+.head{
+    font-size: large;
+    color: black;
+    font-family: cursive;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+    background-color: salmon ;
+    opacity: 0.7;
+}
+
+
+.date{
+    color: black;
+}
+
+div.actu p{
+
+    font-size: xx-large;
+
+}
+
+
+div.actu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: whitesmoke;
+    
+    
+    
+}
+h3{
+    font-weight: bolder;
+    font-size: x-large;
+    opacity: 1;
+    color: black;
+}
+
+.pied{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+
+}
+.pied a {
+    font-size: smaller;
+}
+
+
+/*_________________PAGE DE RECHERCHE*/
+
+#rechercher{
+    font-family: cursive;
+
+}
+.checkbox{
+    margin:20px;
+}
+
+legend{
+    color: black;
+}
+.research{
+
+    align-items: center;
+    text-align: center;
+    color: whitesmoke;
+    height: 100%;
+
+}
+
+#barreRecherche{
+    border-radius: 20%;
+    width: 50%;
+    height: 50px;
+    
+    
+}
+
+#select{
+  
+    padding: 20px;
+    background-color: salmon ;
+    opacity: 0.7;
+    
+}
+label{
+    margin: 20px;
+    color: black;
+   
+
+}
+#validRecherch{
+    border: 1px solid black;
+    padding: 20px;
+    flex-basis: 100%;
+    background-color: #765D5D;
+    border-radius: 5%;
+    opacity: 0.9;
+
+}
+
+.label{
+
+text-align: center;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: space-evenly;
+
+
+}
+
+
+
+
+
+.activeLink{
+    background-color: white;
+}
+
+
+/*------------------------------------page de connexion-----------------*/
+
+.formConnect{
+    margin: 10%;
+    text-align: center;
+
+}
+.confirmConect{  /*bouton valioder*/
+    width: 20%;
+    
+
+}
+
+
+
+
+/*--------------------------------- affichage telephonique -----------------------*/
+
+@media screen and (max-width:700px ) and (min-width: 200px) {
+
+
+    body{
+        width: auto;
+        height: 100%;
+        background-size:cover;
+        background-image: url(../images/biblio.jpg);
+        background-attachment: fixed;
+        opacity: 0,5;
+        display: flex;
+        flex-direction: column;
+
+}
+main{
+
+    width: auto;
+    height: auto;
+    flex: 1;
+    
+}
+ 
+header{
+    display: block;
+    background-color: #B98F8F;
+    height:auto;
+    opacity: 0.9;
+    
+    
+
+}
+
+header h1{
+color: black;
+    
+    
+
+}
+
+#connexion{
+    margin-left: 20%;
+    width: 60%;
+    height: 100%;
+    background-color: darkgray;
+    }
+
+
+    .listenav{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        /* display: grid;
+        grid-template-columns: 1fr 1fr 1fr; */
+        overflow-x: auto;
+        background: rgb(23,0,153);
+    background: linear-gradient(90deg, rgba(23,0,153,1) 0%, rgba(178,0,0,0.7885714285714286) 85%);
+    
+    
+    
+    }
+    nav ul li a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size:medium;
+        font-family: cursive;
+        text-decoration:none; 
+        font-style: oblique;
+        color: white;
+        text-align: center;
+        
+    }
+
+    div.actu{
+        height: 100%;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        
+        
+        
+    }
+    div.actu p{
+
+        font-size: x-large;
+    
+    }
+
+    .head{
+        font-size: small;
+        color: black;
+        font-family: cursive;
+        padding: 10px;
+        align-items: center;
+        text-align: center;
+        background-color: salmon ;
+        opacity: 0.7;
+    }
+    h3{
+        font-weight: bolder;
+        font-size: x-large;
+        opacity: 1;
+        color: black;
+    }
+
+
+
+    /* page de contact*/
+
+   
+
+    /* page de recherche*/
+    .label{
+        
+        
+        display: flex;
+      justify-content: center;
+        flex-wrap: wrap;
+        
+        }
+
+        .research{
+
+            height: 80%;
+            text-align: center;
+            color: whitesmoke;
+            
+        
+        }
+
+
+        /* pied de page*/
+        footer{
+    
+            display: block;
+            background-color: #B98F8F;
+            height: 10%;
+            opacity: 0.8;
+            height: auto;
+          
+     
+    }
+
+    /* footer{
+        position: absolute;
+        width: 100%; height: 15%;
+        bottom: 0; left: 0; right: 0;
+        
+      } */
+        .pied{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            /* position: relative; */
+           
+            
+        
+        }
+        .pied a {
+            font-size: smaller;
+        }
+
+
+    /* ---------page de connexion----------*/
+    .formConnect{
+    margin: 10%;
+    text-align: center;
+
+}
+.confirmConect{  /*bouton valioder*/
+    width: 50%;
+    border-radius: 10px;
+    opacity: 1;
+     
+    
+
+}
+button{
+    border-radius: 10px;
+     
+}
+
+    
+}
