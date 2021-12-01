@@ -69,7 +69,7 @@ header h1{
 #connexion{
     margin-left: 20%;
     width: 60%;
-    height: 35px;
+    height: auto;
     background-color: darkgray;
     opacity: none;
 
@@ -87,13 +87,9 @@ header h1{
 }
 
 .listenav{
-    /* display: flex;
-    flex-direction: row;
-    justify-content: space-evenly; */
+
             display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-
-  
     overflow-x: auto;
     background: rgb(23,0,153);
 background: linear-gradient(90deg, rgba(23,0,153,1) 0%, rgba(178,0,0,0.7885714285714286) 85%);
@@ -103,6 +99,7 @@ background: linear-gradient(90deg, rgba(23,0,153,1) 0%, rgba(178,0,0,0.788571428
 }
 
 .listenav li{
+    justify-content:center ;
     text-align: center;
     padding: 20px;
     display: flex;
@@ -111,6 +108,16 @@ background: linear-gradient(90deg, rgba(23,0,153,1) 0%, rgba(178,0,0,0.788571428
 
 
 }
+
+/* .listenav li{
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-shrink: 0;
+    
+
+
+} */
 
 .nav{
 
@@ -218,6 +225,7 @@ h3{
 }
 
 legend{
+ 
     color: black;
 }
 .research{
@@ -242,8 +250,12 @@ legend{
     padding: 20px;
     background-color: salmon ;
     opacity: 0.7;
+   
     
 }
+
+
+
 label{
     margin: 20px;
     color: black;
@@ -292,6 +304,10 @@ justify-content: space-evenly;
     
 
 }
+
+
+
+
 
 
 
@@ -408,7 +424,6 @@ color: black;
     }
 
 
-
     /* page de contact*/
 
    
@@ -485,4 +500,56 @@ button{
 }
 
     
+}
+
+/* espace adherent */
+
+.listenavbar{
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; */
+            display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+  
+    overflow-x: auto;
+    background: rgb(23,0,153);
+background: linear-gradient(90deg, rgba(23,0,153,1) 0%, rgba(178,0,0,0.7885714285714286) 85%);
+
+
+
+}
+
+
+.listenavbar li{
+    justify-content:center ;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-shrink: 0;
+    
+
+
+}
+
+
+/* ----------- espace bibliothecaire------------ */
+
+
+#inscrit{
+  
+    padding: 20px;
+    background-color: salmon ;
+    opacity: 0.7;
+   
+    
+}
+
+.inscrpition{
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
 }

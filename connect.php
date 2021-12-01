@@ -2,6 +2,9 @@
 
 session_start();
 
+$methode = $_SERVER['REQUEST_METHOD'];
+if($methode === 'GET'){
+
 ?>
 
 <!DOCTYPE html>
@@ -42,8 +45,19 @@ session_start();
            
        
 
-                <form id="select" action="verif.php" method="POST">
+                <form id="select" action="connect.php" method="POST">
                         <fieldset> 
+
+                        <?php
+                        if(isset($_SESSION['erreur'])){
+                            echo '<div class="alert alert-danger" role="alert">';
+                            echo $_SESSION['erreur'];
+                            echo '</div>';
+
+                        }
+                        
+                        
+                        ?>
                             <legend>veuillez vous identifier</legend> 
                             <br>
 
@@ -78,7 +92,53 @@ session_start();
     
     ?>
     </div>
+<?php
 
+}else{
+        $dsn ='mysql:host=localhost;dbname=connexionBU;charset=utf8';
+        $userName = 'root';
+        $password = '';
+
+        $login = filter_input(INPUT_POST, 'login', FILTER_SANITIZE_EMAIL);
+        $psw = filter_input(INPUT_POST, 'mdp', FILTER_SANITIZE_SPECIAL_CHARS);
+
+        $refPdo = new PDO('mysql:host=localhost:3306;dbname=adherent;charset=utf8', 'root', ''); 
+
+        $sql = 'SELECT * FROM adherents WHERE login=:ident'; //mettre les 2 pts suivi dun identifiant 
+
+        $stat_user = $refPdo->prepare($sql); // mettre prepare a la place de query
+        $stat_user->bindParam(':ident', $login); //va permettre de relier la valeur au paramettre nomé $login = la variable login
+        $stat_user ->execute(); //permet d'executer 
+
+
+        if ($stat_user->rowCount() == 1) {
+            // comparer le $psw avec le mot de passe de la base de données
+            $user = $stat_user->fetch();
+        
+            
+            if ($user['password'] === $psw) {
+                // si connecter alors mémoriser en session le login et ...
+        
+                $_SESSION['nom'] = $user['login'];
+                
+                header('Location: index.php');
+            } else {    // mot de passe incorrect
+                $_SESSION['erreur'] = 'Mot de passe erroné !';
+                header('Location: connect.php');
+            }
+        } else {    // login non trouvé en base
+            $_SESSION['erreur'] = 'Login erroné !';
+            header('Location: connect.php');
+        }
+    
+        
+
+}
+
+
+
+
+?>
 
 </body>
 </body>

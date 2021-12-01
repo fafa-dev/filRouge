@@ -11,13 +11,9 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="accueil/accueil.css">
+    <link rel="stylesheet" href="accueil/adherent.css">
     <script src="js/filRouge.js"></script>
-    <script src="https://kit.fontawesome.com/6f4e25e570.js" crossorigin="anonymous"></script>
-
-
     <title>Site de la bibliotheque le Fil rouge</title>
-  
 
 </head>
 <body>
@@ -25,7 +21,7 @@ session_start();
 <?php
     require_once 'header.php';
    
-    require_once 'nav.php';
+    require_once 'navbaradherent.php';
     
     
 ?>
@@ -44,8 +40,6 @@ session_start();
                 <hr>
                 <h3>Accueil <h2 class="date"> Date : <?php echo date('d.m.Y') ?> </h2></h3>
             </div>
-
-            <br><br>
 
 
             <div class="actu">

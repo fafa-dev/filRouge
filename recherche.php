@@ -1,6 +1,7 @@
 <?php
 
 $page='search';
+session_start();
 
 ?>
 
@@ -24,6 +25,7 @@ $page='search';
     require_once 'nav.php';
     
     ?> 
+    
     <main>
         <div class="containerText">
         
@@ -37,7 +39,7 @@ $page='search';
                 <h3>Recherche </h3>
             </div>
 
-
+            <br><br>
         
             <div class="research">
  

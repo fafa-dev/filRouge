@@ -1,5 +1,7 @@
 <?php
 $page = 'nc';
+
+session_start();
 ?>
 
 
@@ -39,6 +41,7 @@ $page = 'nc';
                 <hr>
                 <h3>Accueil <h2 class="date"> Date : <?php echo date('d.m.Y') ?> </h2></h3>
             </div>
+            <br><br>
 
 
             <div class="actu">

@@ -1,6 +1,6 @@
 <?php
 
-$page = 'index';
+$page = 'tableaudebord';
 session_start();
 ?>
 
@@ -13,11 +13,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="accueil/accueil.css">
     <script src="js/filRouge.js"></script>
-    <script src="https://kit.fontawesome.com/6f4e25e570.js" crossorigin="anonymous"></script>
-
-
     <title>Site de la bibliotheque le Fil rouge</title>
-  
 
 </head>
 <body>
@@ -42,34 +38,30 @@ session_start();
                     Bienvenue sur le site officiel de la bibliotheque LE FIL ROUGE
                 </H2>
                 <hr>
-                <h3>Accueil <h2 class="date"> Date : <?php echo date('d.m.Y') ?> </h2></h3>
+                <h3>tableau de bord <h2 class="date"> Date : <?php echo date('d.m.Y') ?> </h2></h3>
             </div>
 
-            <br><br>
-
-
-            <div class="actu">
+            <div class="livreEmprunte">
+                <a href="perso">Vos données personnelles</a>
                 
             
-                <p>
-                    Bonne nouvelle! 
-                </p>
-                    <br> 
-                <p>
-                    Votre bibliotheque Le FILROUGE vient d'ouvrir ses portes. 
-                </p>
-                    
-                <p>
-                    La bibliotheque vous accueil du lundi au vendredi :
-                </p>
-                <p>
-                    du Lundi au vendredi : de 9h à 12h et 13h à 20h
-                </p>
-                <p>
-                    Le samedi : de 9h à 12h et 13h à 18h
-                </p>
+            
                 
             </div>
+
+            <div class="livreEmprunte">
+                
+            
+            
+                
+            </div>
+            <div class="coursEmprunt">
+                
+            
+            
+                
+            </div>
+
 
        
         </div>
