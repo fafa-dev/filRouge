@@ -2,6 +2,7 @@
 
 session_start();
 
+
 $methode = $_SERVER['REQUEST_METHOD'];
 if($methode === 'GET'){
 
@@ -67,7 +68,7 @@ if($methode === 'GET'){
                
      
                             <div class="label">
-                                <label for="login">Numero d'adherent<input type="text" class="checkbox" name="login"></label>
+                                <label for="login">Numero d'adherent<input type="text"  class="checkbox" name="login"></label>
                             
                             
                                 <label for="mdp">Mot de passe<input type="password" class="checkbox" name="mdp"></label>
@@ -95,7 +96,8 @@ if($methode === 'GET'){
 <?php
 
 }else{
-        $dsn ='mysql:host=localhost;dbname=connexionBU;charset=utf8';
+        $login ="";
+        $dsn ='mysql:host=localhost;dbname=adherent;charset=utf8';
         $userName = 'root';
         $password = '';
 
@@ -104,7 +106,7 @@ if($methode === 'GET'){
 
         $refPdo = new PDO('mysql:host=localhost:3306;dbname=adherent;charset=utf8', 'root', ''); 
 
-        $sql = 'SELECT * FROM adherents WHERE login=:ident'; //mettre les 2 pts suivi dun identifiant 
+        $sql = 'SELECT * FROM utilisateur WHERE code_user=:ident'; //mettre les 2 pts suivi dun identifiant 
 
         $stat_user = $refPdo->prepare($sql); // mettre prepare a la place de query
         $stat_user->bindParam(':ident', $login); //va permettre de relier la valeur au paramettre nomé $login = la variable login
@@ -119,16 +121,21 @@ if($methode === 'GET'){
             if ($user['password'] === $psw) {
                 // si connecter alors mémoriser en session le login et ...
         
-                $_SESSION['nom'] = $user['login'];
+                $_SESSION['nom'] = $user['code_user'];
+                $_SESSION['user'] = $user['prenom_user']; // je suis allée chercher le prenom dans ma base de donnée pour le mettre dans le header une fois que la personne se connect
                 
                 header('Location: index.php');
+                
             } else {    // mot de passe incorrect
                 $_SESSION['erreur'] = 'Mot de passe erroné !';
                 header('Location: connect.php');
+                
             }
         } else {    // login non trouvé en base
             $_SESSION['erreur'] = 'Login erroné !';
             header('Location: connect.php');
+            $login ="";
+            
         }
     
         

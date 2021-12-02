@@ -51,14 +51,14 @@ session_start();
            
        
 
-           <form id="inscrit" action="connect.php" method="POST">
+           <form id="inscrit" action="inscription.php" method="POST">
                    <fieldset> 
 
                    <?php
                         if($_SERVER['REQUEST_METHOD']== 'POST'){  //condition pour savoir si on passe par la methode post
                             // session_start();
             
-                            $refPdo = new PDO('mysql:host=localhost;dbname=adherents', 'root','');
+                            $refPdo = new PDO('mysql:host=localhost;dbname=adherent', 'root','');
             
                             
                             $nom= $_POST['nom'];
@@ -69,18 +69,26 @@ session_start();
                             $email = $_POST['email'];
                             $adresse = $_POST ['adresse'];
                             $code = substr($nom, 0 , 3).substr($prenom,0 ,3).rand(0, 999);
-                            var_dump($code);
+                            $pass = substr($prenom,0 ,3).substr($nom, 0 , 3).rand(0, 9999);;
             
             
             
                             // $name = "SELECT * FROM user WHERE nom ='$login'";
-                            $name = "INSERT INTO  utilisateur  (code_user, nom_user, prenom_user, categorie, date_adhesion, date_fin_adhesion, email_user, adresse_user) VALUES ('$code','$nom', '$prenom',  '$cate', '$date', '$datefin','$email','$adresse')";
+                            $name = "INSERT INTO  utilisateur  (code_user, nom_user, prenom_user, categorie, date_adhesion, date_fin_adhesion, email_user, adresse_user, password) VALUES ('$code','$nom', '$prenom',  '$cate', '$date', '$datefin','$email','$adresse', '$pass')";
             
             
                             
                             $stat_pers = $refPdo ->query($name);
-            
-            
+
+
+                            $subject = 'confirmation de votre inscription';
+                            $message = "bonjour ".$prenom." ".$nom."\r\n nous vous confirmons votre inscription a la bibliotheque\r\n votre mot de passe provisoire est ".$pass."\r\n merci de vous rendre dans votre espace perso pour le modifier";
+                            $sendmail_from ='From: fafa.afpa@gmail.com';
+
+                            mail($email,$subject,$message,$sendmail_from);
+                            
+                            
+                            
                             }
                    
                    ?>
@@ -99,7 +107,7 @@ session_start();
                        
                            <label for="prenom">prenom<input type="text" class="checkbox" name="prenom"></label>
                            <label for="categorie">categorie
-                               <select value="professeur" class="checkbox">
+                               <select value="professeur" name ="categorie" class="checkbox">
                                  <option value="professeur">professeur</option>
                                  <option value="etudiant">etudiant</option>
                                 </select>
@@ -112,7 +120,6 @@ session_start();
                        
                            <label for="email">email<input type="email" class="checkbox" name="email"></label>
                            <label for="adresse">adresse<input type="text" class="checkbox" name="adresse"></label>
-                       
                        <br>
                        
                        </div>
